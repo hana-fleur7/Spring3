@@ -9,16 +9,21 @@
     処理が完了しました。<br>
     <table border="1">
         <thead>
-            <th>ID</th>
-            <th>名前</th>
-            <th>年齢</th>
-            <th>性別</th>
-            <th>部署ID</th>
+            <tr> <th>ID</th>
+                <th>名前</th>
+                <th>年齢</th>
+                <th>性別</th>
+                <th>部署ID</th>
+            </tr>
+           
         </thead>
         <tbody>
-            <span th:each="employee : ${employee}">
-                <span th:text="${id}">dummy</span>
-                <span th
+            <span th:each="employee : ${employeeList}">
+                <span th:text="${id}">dummy</span><br>
+                <span th:text="${name}">dummu</span><br>
+                <span th:text="${age}">dummy</span><br>
+                <span th:text="${gendar}">dummy</span><br>
+                <span th:text="${departmentID}">dummy</span>
             </span>
 
         </tbody>

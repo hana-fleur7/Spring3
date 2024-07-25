@@ -8,7 +8,7 @@ public class Employee {
     private Integer age;
     private String gender;
     private Integer departmentId;
-    private List<Employee> employee;
+    private List<Employee> employeeList;
 
     @Override
     public String toString() {
@@ -48,13 +48,15 @@ public class Employee {
         this.departmentId = departmentId;
     }
 
-    public List<Employee> getEmployee() {
-        return employee;
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
 
-    public void setEmployee(List<Employee> employee) {
-        this.employee = employee;
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
     }
+
+   
     
 
 }

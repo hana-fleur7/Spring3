@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class EmployeeController {
 
     @RequestMapping("/execute")
     public String execute(Model model){
+
+        List<Employee> employeeList = new Employee();
+      
         Employee employee = new Employee();
         employee.setName("山田太郎");
         employee.setAge(20);
@@ -25,13 +29,10 @@ public class EmployeeController {
         employee.setDepartmentId(1);
         service.save(employee);
 
+        List<Employee> employeeList = service.findAll();
 
-        Employee employee2 = service.load(3);
-        System.out.println(employee2);
 
-        List<Employee> employee = new EmployeeList<>(employee);
-
-        model.addAttribute("employee", employee);
+        model.addAttribute("employeeList", employeeList);
         // service.findAll().forEach(System.out::println); //コンソールに出力する
         
         return "finished";

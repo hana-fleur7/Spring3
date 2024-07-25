@@ -39,9 +39,8 @@ public class EmployeeRepository {
 
         SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 
-        Employee employee = template.queryForObject(sql, param, EMPLOYEE_ROW_MAPPER);
+        return template.queryForObject(sql, param, EMPLOYEE_ROW_MAPPER);
 
-        return employee;
     }
 
     
@@ -54,8 +53,8 @@ public class EmployeeRepository {
                 ,gender
                 ,department_id FROM employees ORDER BY age
                 """;
-        List<Employee> employeeList = template.query(sql, EMPLOYEE_ROW_MAPPER);
-        return employeeList;
+        return template.query(sql, EMPLOYEE_ROW_MAPPER);
+       
 
     }
 
